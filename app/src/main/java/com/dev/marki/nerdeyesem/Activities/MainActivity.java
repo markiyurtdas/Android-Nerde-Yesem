@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startActivity(new Intent(MainActivity.this,Listed.class));
+
 
         new BiometricManager.BiometricBuilder(MainActivity.this)
                 .setTitle(getString(R.string.biometric_title))
@@ -53,8 +55,7 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
 
     @Override
     public void onBiometricAuthenticationNotAvailable() {
-        Toast.makeText(getA
-                vpplicationContext(), getString(R.string.biometric_error_fingerprint_not_available), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.biometric_error_fingerprint_not_available), Toast.LENGTH_LONG).show();
     }
 
     @Override

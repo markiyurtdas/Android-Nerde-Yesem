@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+	package
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:2:5-31
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:1-10:12
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:5:5-72
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:5:22-69
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:8:5-74
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml:8:22-71
+uses-sdk
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml
+		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/src/main/AndroidManifest.xml

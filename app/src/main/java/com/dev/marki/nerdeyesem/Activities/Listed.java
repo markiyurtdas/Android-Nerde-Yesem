@@ -1,12 +1,13 @@
 package com.dev.marki.nerdeyesem.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -17,118 +18,67 @@ import com.dev.marki.nerdeyesem.R;
 import com.dev.marki.nerdeyesem.Utils.APIClient;
 import com.dev.marki.nerdeyesem.Utils.ApiInterface;
 import com.dev.marki.nerdeyesem.Utils.RecycleAdapter;
-import com.dev.marki.nerdeyesem.Zomato.Restaurant;
 import com.dev.marki.nerdeyesem.Zomato.Restaurant_;
 import com.dev.marki.nerdeyesem.Zomato.Zomato;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Listed extends AppCompatActivity {
 
+    public int restaurantCount = 21;
+    ApiInterface apiFace;
     private RecyclerView reciclerView;
-    private RecyclerView.Adapter adapter;
-    private List<Restaurant> listItems;
-    Zomato zomato;
+    CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listed);
 
-        final int restaurantCount = 5;
-
-        listItems = new ArrayList<>();
 
 
+        Retrofit retrofit = APIClient.getClient();
+        apiFace = retrofit.create(ApiInterface.class);
 
-        ApiInterface servis = APIClient.getClient().create(ApiInterface.class);
-        //38.4623322,27.2212547 , 5
-         servis.getRestaurantsBySearch(38.4623322,27.2212547,5);
-        cagri.enqueue(new Callback<Zomato>() {
-            @Override
-            public void onResponse(Call<Zomato> call, Response<Zomato> response) {
-                zomato = response.body();
-
-                for (int i =0 ; i<restaurantCount;i++) {
-                    Constant cos = new Constant();
-                    cos.listItems.add(zomato.restaurants.get(i));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Zomato> call, Throwable t) {
-            }
-        });
         reciclerView = (RecyclerView) findViewById(R.id.reciclerView);
         reciclerView.setHasFixedSize(true);
-
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Constant cos = new Constant();
-        listItems = cos.listItems;
-        Toast.makeText(this, listItems.size()+"", Toast.LENGTH_SHORT).show();
 
-        adapter = new RecycleAdapter(this, listItems);
-        reciclerView.setAdapter(adapter);
+        getData();
     }
 
+    private void getData() {
 
-    public void addItemToList(List<Restaurant> listItems, Restaurant o){
-        listItems.add(o);
+        compositeDisposable.add(apiFace.getRestaurantsBySearch(
+                38.4651461,27.2146969,restaurantCount)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Zomato>() {
+                    @Override
+                    public void accept(Zomato zomato) throws Exception {
+                        displayData(zomato);
+                    }
+                })
+        );
+
     }
-}
+    private void displayData(Zomato zomato){
+        List<Restaurant_> listItems = new ArrayList<>();
+        for (int i = 0; i<zomato.restaurants.size();i++){
 
-
-
-
-
-
-
-
-/*
-*
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import Adapter.MyAdapter;
-import Model.ListItem;
-
-public class MainActivity extends AppCompatActivity {
-    private RecyclerView reciclerView;
-    private RecyclerView.Adapter adapter;
-    private List<ListItem> listItems;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        reciclerView = (RecyclerView) findViewById(R.id.reciclerView);
-        reciclerView.setHasFixedSize(true);
-        //every item has a fixed size
-        reciclerView.setLayoutManager(new
-                LinearLayoutManager(this));
-
-        listItems = new ArrayList<>();
-
-        for (int i = 0; i<10; i++) {
-            ListItem listItem = new ListItem(
-                    "Item " + (i+1),
-                    "Description"
-            );
-            listItems.add(listItem);
+            listItems.add(zomato.restaurants.get(i).restaurant);
         }
 
-        adapter = new MyAdapter(this, listItems);
-
+        RecycleAdapter adapter  = new RecycleAdapter(this,listItems);
         reciclerView.setAdapter(adapter);
+    }
 
+    @Override
+    protected void onStop() {
+        compositeDisposable.clear();
+        super.onStop();
     }
 }
-* */

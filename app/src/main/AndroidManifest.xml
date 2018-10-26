@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.Listed"></activity>
+        <activity android:name=".Activities.Listed" android:label="@string/restaurants" />
+        <activity android:name=".Activities.Detail" android:label="@string/detail">        </activity>
     </application>
 
 </manifest>

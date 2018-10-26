@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Nerde Yesem</string>
     <string name="btn_authenticate">Login</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="detail">Detail</string>
 
     <string name="biometric_title">Login</string>
     <string name="biometric_subtitle">Login to Nerde Yesem app</string>

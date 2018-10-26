@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp" >
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,20 +22,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="4dp"
+                >
 
                 <TextView
                     android:id="@+id/rest_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Name" />
-                <TextView
-                    android:id="@+id/address_name"
+                    android:textStyle="bold|italic"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:paddingBottom="8dp"
+                    android:text="Restaurant: "
+                    />
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Address" />
+                    android:gravity="center">
+                    <RatingBar
+                        android:id="@+id/rating_bar"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:stepSize="0.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                  <TextView
+                      android:id="@+id/stars_count"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:textSize="32sp"
+                      android:text="(0.0)"/>
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/address_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="Address: " />
+
 
             </LinearLayout>
         </LinearLayout>
