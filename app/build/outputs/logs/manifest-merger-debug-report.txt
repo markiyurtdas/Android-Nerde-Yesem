@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
 MERGED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b63428e974acd814a6db48d116da5878/AndroidManifest.xml:17:1-22:12
@@ -39,20 +39,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/marki/.gradle/ca
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/29b445fed152b9124361fd55e2b4b73d/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/d3e20e3097221e770beb71a08b6fc08e/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/ed627abdbe7dad4de06646cda3627844/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:3:5-39
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:11-69
@@ -67,7 +67,7 @@ ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidM
 	android:name
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:6:22-64
 application
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:8:5-24:19
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:8:5-28:19
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/marki/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/9a972bc995ebc9c87aaaec16cd47990e/AndroidManifest.xml:9:5-20
@@ -105,17 +105,17 @@ ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidM
 	android:name
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:19:27-74
 activity#com.dev.marki.nerdeyesem.Activities.Listed
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:9-91
-	android:label
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:53-88
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:9-24:59
+	android:theme
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:24:13-56
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:19-52
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:23:13-46
 activity#com.dev.marki.nerdeyesem.Activities.Detail
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:23:9-103
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:25:9-27:46
 	android:label
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:23:53-83
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:27:13-43
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:23:19-52
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:26:13-46
 uses-sdk
 INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml

@@ -1,4 +1,4 @@
-#Sat Oct 27 01:54:59 EET 2018
+#Sat Oct 27 15:58:34 EET 2018
 base.0=/home/marki/Project/Android Projects/NerdeYesem/app/build/intermediates/transforms/dexMerger/debug/1
 path.0=classes.dex
 renamed.0=classes.dex

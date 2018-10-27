@@ -1,6 +1,7 @@
 package com.dev.marki.nerdeyesem.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -9,9 +10,11 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
+import android.view.MenuItem;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
 import com.dev.marki.nerdeyesem.R;
@@ -28,24 +31,32 @@ public class Listed extends AppCompatActivity {
 
     public int restaurantCount = 21;
     ApiInterface apiFace;
-    private RecyclerView reciclerView;
+    private RecyclerView recyclerView;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listed);
+        setContentView(R.layout.activity_recycle_screen);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
 
         Retrofit retrofit = APIClient.getClient();
         apiFace = retrofit.create(ApiInterface.class);
 
-        reciclerView = (RecyclerView) findViewById(R.id.reciclerView);
-        reciclerView.setHasFixedSize(true);
-        reciclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        //runLayoutAnimation(recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         getData();
     }
@@ -73,7 +84,8 @@ public class Listed extends AppCompatActivity {
         }
 
         RecycleAdapter adapter  = new RecycleAdapter(this,listItems);
-        reciclerView.setAdapter(adapter);
+        runLayoutAnimation(recyclerView);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -81,4 +93,22 @@ public class Listed extends AppCompatActivity {
         compositeDisposable.clear();
         super.onStop();
     }
+    private void runLayoutAnimation(final RecyclerView recyclerView) {
+        final Context context = recyclerView.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_from_bottom);
+
+        recyclerView.setLayoutAnimation(controller);
+        recyclerView.scheduleLayoutAnimation();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            Toast.makeText(this, "Geri tuşu basıldı", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+
 }

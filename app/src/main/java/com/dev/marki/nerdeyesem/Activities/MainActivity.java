@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startActivity(new Intent(MainActivity.this,Listed.class));
+        //startActivity(new Intent(MainActivity.this,Listed.class));
 
 
+/*
         new BiometricManager.BiometricBuilder(MainActivity.this)
                 .setTitle(getString(R.string.biometric_title))
                 .setSubtitle(getString(R.string.biometric_subtitle))
@@ -28,10 +29,12 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
                 .setNegativeButtonText(getString(R.string.biometric_negative_button_text))
                 .build()
                 .authenticate(MainActivity.this);
+*/
         Button btn_login = findViewById(R.id.main_btn_login);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Listed.class));
                 new BiometricManager.BiometricBuilder(MainActivity.this)
                         .setTitle(getString(R.string.biometric_title))
                         .setSubtitle(getString(R.string.biometric_subtitle))

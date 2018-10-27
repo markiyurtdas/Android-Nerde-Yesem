@@ -33,11 +33,10 @@
         </activity>
         <activity
             android:name="com.dev.marki.nerdeyesem.Activities.Listed"
-            android:label="@string/restaurants" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.dev.marki.nerdeyesem.Activities.Detail"
-            android:label="@string/detail" >
-        </activity>
+            android:label="@string/detail" />
     </application>
 
 </manifest>

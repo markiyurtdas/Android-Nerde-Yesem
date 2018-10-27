@@ -15,6 +15,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim item_animation_from_bottom
+anim layout_animation_from_bottom
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -25,6 +27,13 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array list_preference_entries
+array list_preference_entry_values
+array multi_select_list_preference_default_value
+array pref_example_list_titles
+array pref_example_list_values
+array pref_sync_frequency_titles
+array pref_sync_frequency_values
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1034,11 +1043,14 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_fingerprint
 drawable ic_fingerprint
+drawable ic_info_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notifications_black_24dp
+drawable ic_sync_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1088,7 +1100,6 @@ id address_name
 id alertTitle
 id all
 id always
-id app_bar
 id async
 id auto
 id barrier
@@ -1120,7 +1131,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id detail_toolbar
 id dimensions
 id direct
 id disableHome
@@ -1139,7 +1149,6 @@ id fill_vertical
 id filled
 id fixed
 id forever
-id frameLayout
 id ghost_view
 id gone
 id group_divider
@@ -1147,7 +1156,6 @@ id home
 id homeAsUp
 id icon
 id icon_group
-id id_text
 id ifRoom
 id image
 id img_fingerprint
@@ -1195,11 +1203,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id rating_bar
-id reciclerView
+id recyclerView
 id rest_name
-id restourant_detail
-id restourant_detail_container
-id restourant_list
 id right
 id right_icon
 id right_side
@@ -1266,7 +1271,6 @@ id titleDividerNoCustom
 id title_template
 id title_view
 id toolbar
-id toolbar_layout
 id top
 id topPanel
 id touch_outside
@@ -1332,10 +1336,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_detail
-layout activity_listed
 layout activity_main
-layout activity_restourant_detail
-layout activity_restourant_list
+layout activity_recycle_screen
+layout content_recycle_screen
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1368,9 +1371,6 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout restourant_detail
-layout restourant_list
-layout restourant_list_content
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1446,9 +1446,25 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pref_default_display_name
+string pref_description_social_recommendations
+string pref_header_data_sync
+string pref_header_general
+string pref_header_notifications
+string pref_ringtone_silent
+string pref_title_add_friends_to_messages
+string pref_title_display_name
+string pref_title_new_message_notifications
+string pref_title_ringtone
+string pref_title_social_recommendations
+string pref_title_sync_frequency
+string pref_title_system_sync_settings
+string pref_title_vibrate
 string restaurants
 string search_menu_title
 string status_bar_notification_info_overflow
+string title_activity_recycle_screen
+string title_activity_settings
 string title_restourant_detail
 string title_restourant_list
 style AlertDialog_AppCompat
@@ -2035,3 +2051,7 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml pref_data_sync
+xml pref_general
+xml pref_headers
+xml pref_notification
