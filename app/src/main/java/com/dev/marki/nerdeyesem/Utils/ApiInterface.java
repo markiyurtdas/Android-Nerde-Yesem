@@ -16,6 +16,8 @@ public interface ApiInterface {
     })
     @GET("/api/v2.1/search")
     Observable<Zomato> getRestaurantsBySearch(@Query("lat") Double latitude,
-                                              @Query("lon") Double longtitude, @Query("count") int count);
+                                              @Query("lon") Double longtitude,
+                                              @Query("sort") String string,
+                                              @Query("count") int count);
 
 }

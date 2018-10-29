@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
 MERGED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b63428e974acd814a6db48d116da5878/AndroidManifest.xml:17:1-22:12
@@ -11,6 +11,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/marki/.grad
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/80f7057f7adad7ed806b790531c3bafe/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/bade98fdab7371cf2b5a8953150bc4d6/AndroidManifest.xml:17:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /home/marki/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/c2fd4703ad22adaebee20938207825e1/AndroidManifest.xml:15:1-20:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.fragment:fragment:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/6cdd5d91134a728a735aed0fc6941074/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/024dd25899f870acbbdfea6796f1cc2f/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/5000ac3a48812beb2f9ed78170b13ff6/AndroidManifest.xml:17:1-22:12
@@ -28,6 +29,7 @@ MERGED from [androidx.transition:transition:1.0.0] /home/marki/.gradle/caches/tr
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/d9dbef2bfd7e84507b14e5e9751c2c0a/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/09e60cc9d7a4d7e685c802be471d3406/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/55b373897ec88eec40538ba57d74e194/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0-rc01] /home/marki/.gradle/caches/transforms-1/files-1.1/exifinterface-1.0.0-rc01.aar/46ee5a1dff3c032f18237482b67402a5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9caa0085ba4bce391640104dd45492b6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/1cf5d355ffe96e49fd985f8a9a50e213/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/3df3dd8c4784b2efe5072a320b2e00a4/AndroidManifest.xml:17:1-22:12
@@ -39,39 +41,57 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/marki/.gradle/ca
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/29b445fed152b9124361fd55e2b4b73d/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/d3e20e3097221e770beb71a08b6fc08e/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/ed627abdbe7dad4de06646cda3627844/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:3:5-39
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:5:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.USE_BIOMETRIC
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:5:5-72
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:7:5-72
 MERGED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:5-72
 MERGED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:5-72
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:5:22-69
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:7:22-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:6:22-64
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:9:5-76
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:9:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:10:22-76
 application
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:8:5-28:19
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:12:5-31:19
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/c389ad39b10f1d2f977af8571d4f047e/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/marki/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/9a972bc995ebc9c87aaaec16cd47990e/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/marki/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/9a972bc995ebc9c87aaaec16cd47990e/AndroidManifest.xml:9:5-20
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/09e60cc9d7a4d7e685c802be471d3406/AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/09e60cc9d7a4d7e685c802be471d3406/AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/55b373897ec88eec40538ba57d74e194/AndroidManifest.xml:22:5-23:19
@@ -79,43 +99,43 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/marki
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/09e60cc9d7a4d7e685c802be471d3406/AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:15:9-41
 	android:roundIcon
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:14:9-40
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:18:9-40
 activity#com.dev.marki.nerdeyesem.Activities.MainActivity
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:15:9-21:20
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:19:9-24:20
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:15:19-58
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:19:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:27-74
 activity#com.dev.marki.nerdeyesem.Activities.Listed
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:22:9-24:59
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:25:9-27:59
 	android:theme
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:24:13-56
-	android:name
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:23:13-46
-activity#com.dev.marki.nerdeyesem.Activities.Detail
-ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:25:9-27:46
-	android:label
-		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:27:13-43
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:27:13-56
 	android:name
 		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:26:13-46
+activity#com.dev.marki.nerdeyesem.Activities.Detail
+ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:28:9-30:59
+	android:theme
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:30:13-56
+	android:name
+		ADDED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml:29:13-46
 uses-sdk
 INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/marki/Project/Android Projects/NerdeYesem/app/src/main/AndroidManifest.xml
@@ -134,6 +154,8 @@ MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/marki/.gradle/cache
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/bade98fdab7371cf2b5a8953150bc4d6/AndroidManifest.xml:20:5-44
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /home/marki/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/c2fd4703ad22adaebee20938207825e1/AndroidManifest.xml:18:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /home/marki/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/c2fd4703ad22adaebee20938207825e1/AndroidManifest.xml:18:5-43
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/6cdd5d91134a728a735aed0fc6941074/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/6cdd5d91134a728a735aed0fc6941074/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/024dd25899f870acbbdfea6796f1cc2f/AndroidManifest.xml:20:5-44
@@ -168,6 +190,8 @@ MERGED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/f
 MERGED from [androidx.core:core:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/09e60cc9d7a4d7e685c802be471d3406/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/55b373897ec88eec40538ba57d74e194/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/55b373897ec88eec40538ba57d74e194/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0-rc01] /home/marki/.gradle/caches/transforms-1/files-1.1/exifinterface-1.0.0-rc01.aar/46ee5a1dff3c032f18237482b67402a5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0-rc01] /home/marki/.gradle/caches/transforms-1/files-1.1/exifinterface-1.0.0-rc01.aar/46ee5a1dff3c032f18237482b67402a5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9caa0085ba4bce391640104dd45492b6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9caa0085ba4bce391640104dd45492b6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/marki/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/1cf5d355ffe96e49fd985f8a9a50e213/AndroidManifest.xml:20:5-44
@@ -204,3 +228,11 @@ uses-permission#android.permission.USE_FINGERPRINT
 ADDED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:5-74
 	android:name
 		ADDED from [:biometric-auth] /home/marki/Project/Android Projects/NerdeYesem/biometric-auth/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:22-71
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/marki/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/d0d6d742150a69e23873f3e884cdaab2/AndroidManifest.xml:9:13-64

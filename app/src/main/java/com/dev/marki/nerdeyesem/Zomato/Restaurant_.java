@@ -3,9 +3,10 @@ package com.dev.marki.nerdeyesem.Zomato;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Restaurant_ {
+public class Restaurant_  implements Serializable {
 
     public Restaurant_(String name, Location location, UserRating userRating) {
         this.name = name;
@@ -113,4 +114,17 @@ public class Restaurant_ {
     @Expose
     public List<Object> establishmentTypes = null;
 
+    public double distance;
+
+
+    @Override
+    public String toString() {
+        return
+                "Id: " + id + "\n\nAddress: "+location.address+
+                "\n\nCuisines: " + cuisines +
+                "\n\nAverage Cost For Two: " + averageCostForTwo +
+                "\n\nCurrency: " + currency+
+                "\n\nAggregate Rating" + userRating.aggregateRating +
+                        ", ("+userRating.ratingText+")"+", Votes: "+userRating.votes;
+    }
 }

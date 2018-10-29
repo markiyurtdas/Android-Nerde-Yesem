@@ -784,6 +784,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen app_bar_height
 dimen biometric_bg_size
 dimen biometric_bottom_sheet_padding
@@ -918,6 +920,8 @@ dimen mtrl_textinput_box_stroke_width_default
 dimen mtrl_textinput_box_stroke_width_focused
 dimen mtrl_textinput_outline_box_expanded_padding
 dimen mtrl_toolbar_default_height
+dimen nav_header_height
+dimen nav_header_vertical_spacing
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1042,6 +1046,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_fingerprint
+drawable ic_action_gps
 drawable ic_fingerprint
 drawable ic_info_black_24dp
 drawable ic_launcher_background
@@ -1054,6 +1059,7 @@ drawable ic_sync_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable noimage
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1092,6 +1098,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1131,9 +1138,12 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail_image
+id detail_rest_name
 id dimensions
 id direct
 id disableHome
+id distance
 id edit_query
 id end
 id end_padder
@@ -1158,6 +1168,8 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView
+id imageView2
 id img_fingerprint
 id img_logo
 id info
@@ -1173,6 +1185,7 @@ id largeLabel
 id left
 id line1
 id line3
+id linear_layout
 id listMode
 id list_item
 id main_btn_login
@@ -1246,7 +1259,6 @@ id src_atop
 id src_in
 id src_over
 id standard
-id stars_count
 id start
 id status_bar_latest_event_content
 id stretch
@@ -1339,6 +1351,7 @@ layout activity_detail
 layout activity_main
 layout activity_recycle_screen
 layout content_recycle_screen
+layout custompopup
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1376,6 +1389,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout view_bottom_sheet
+menu navigation
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1417,8 +1431,11 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
+string address
 string app_name
 string appbar_scrolling_view_behavior
+string bad_location
 string biometric_cancelled
 string biometric_description
 string biometric_error_fingerprint_not_available
@@ -1441,6 +1458,13 @@ string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string login
 string mtrl_chip_close_icon_content_description
+string nav_header_desc
+string nav_header_subtitle
+string nav_header_title
+string navigation_drawer_close
+string navigation_drawer_open
+string no_internet
+string open_gps
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1463,6 +1487,7 @@ string pref_title_vibrate
 string restaurants
 string search_menu_title
 string status_bar_notification_info_overflow
+string title_activity_navigation
 string title_activity_recycle_screen
 string title_activity_settings
 string title_restourant_detail

@@ -1,10 +1,11 @@
 package com.dev.marki.nerdeyesem.Zomato;
 
+        import java.io.Serializable;
         import java.util.List;
         import com.google.gson.annotations.Expose;
         import com.google.gson.annotations.SerializedName;
 
-public class Zomato {
+public class Zomato implements Serializable {
 
     @SerializedName("results_found")
     @Expose

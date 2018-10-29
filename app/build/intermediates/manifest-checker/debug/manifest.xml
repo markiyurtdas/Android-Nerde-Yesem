@@ -8,8 +8,12 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="28" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- Step 2: This permission is depreciated in Android P -->
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
@@ -36,8 +40,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.dev.marki.nerdeyesem.Activities.Detail"
-            android:label="@string/detail" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.dev.marki.nerdeyesem.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.dev.marki.nerdeyesem.com.android.tools.ir.server.InstantRunContentProvider"
