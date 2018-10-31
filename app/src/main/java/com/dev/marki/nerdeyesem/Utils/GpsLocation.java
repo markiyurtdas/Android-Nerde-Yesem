@@ -96,6 +96,4 @@ public class GpsLocation implements LocationListener {
     public void onProviderDisabled(String provider) {
     }
 
-
-
 }

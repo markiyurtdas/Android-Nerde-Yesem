@@ -3,15 +3,13 @@ package com.dev.marki.nerdeyesem.Activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.hardware.fingerprint.FingerprintManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,18 +18,12 @@ import com.an.biometric.BiometricManager;
 import com.dev.marki.nerdeyesem.R;
 import com.dev.marki.nerdeyesem.Utils.GpsLocation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity implements BiometricCallback {
-    double[] latlon;
 
     double latitude =-1;
     double longitude = -1;
@@ -40,41 +32,54 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Access fine location
         ActivityCompat.requestPermissions(MainActivity.this, new String[]
                 {Manifest.permission.ACCESS_FINE_LOCATION}, 123);
+        final FingerprintManager fingerprintManager = (FingerprintManager) this.getSystemService(Context.FINGERPRINT_SERVICE);
 
 
+        //startActivity(new Intent(MainActivity.this, Listed.class));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final TextView btn_login = findViewById(R.id.main_btn_login);
+        btn_login.setVisibility(View.INVISIBLE);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getLocation();
+                btn_login.setVisibility(View.VISIBLE);
                 Toast.makeText(MainActivity.this, latitude +"\n"+longitude, Toast.LENGTH_SHORT).show();
             }
         });
 
 
-
-
-
-
-
-
-
-
-
-        TextView btn_login = findViewById(R.id.main_btn_login);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new BiometricManager.BiometricBuilder(MainActivity.this)
-                        .setTitle(getString(R.string.biometric_title))
-                        .setSubtitle(getString(R.string.biometric_subtitle))
-                        .setDescription(getString(R.string.biometric_description))
-                        .setNegativeButtonText(getString(R.string.biometric_negative_button_text))
-                        .build()
-                        .authenticate(MainActivity.this);
+
+                if (!fingerprintManager.isHardwareDetected()) {
+                    // Device doesn't support fingerprint authentication
+                    Toast.makeText(MainActivity.this, "Device doesn't support fingerprint authentication ", Toast.LENGTH_SHORT).show();
+                    if(!isOnline()){
+                        Toast.makeText(MainActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    }else{
+                        Intent intent = new Intent(MainActivity.this, Listed.class);
+                        intent.putExtra("latitude",""+latitude);
+                        intent.putExtra("longtitude",""+longitude);
+                        startActivity(intent);
+                    }
+                } else if (!fingerprintManager.hasEnrolledFingerprints()) {
+                    Toast.makeText(MainActivity.this, "Please enroll a Fingerprint ", Toast.LENGTH_SHORT).show();
+                } else {
+                    new BiometricManager.BiometricBuilder(MainActivity.this)
+                            .setTitle(getString(R.string.biometric_title))
+                            .setSubtitle(getString(R.string.biometric_subtitle))
+                            .setDescription(getString(R.string.biometric_description))
+                            .setNegativeButtonText(getString(R.string.biometric_negative_button_text))
+                            .build()
+                            .authenticate(MainActivity.this);                }
+
 
             }
         });
@@ -88,6 +93,32 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
         }else {
             latitude = location.getLatitude();
             longitude = location.getLongitude();
+        }
+    }
+
+    @Override
+    public void onAuthenticationSuccessful() {
+        Toast.makeText(getApplicationContext(), getString(R.string.biometric_success), Toast.LENGTH_SHORT).show();
+        getLocation();
+        double minDouble= 0.0000000001;
+        if (latitude < minDouble|| longitude <minDouble ){
+            Toast.makeText(MainActivity.this, R.string.bad_location, Toast.LENGTH_SHORT).show();
+        }else if(!isOnline()){
+            Toast.makeText(this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+        }else{
+            Intent intent = new Intent(MainActivity.this, Listed.class);
+            intent.putExtra("latitude",""+latitude);
+            intent.putExtra("longtitude",""+longitude);
+            startActivity(intent);
+        }    }
+
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -116,51 +147,20 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
     }
 
     @Override
-    public void onAuthenticationFailed() {
-//        Toast.makeText(getApplicationContext(), getString(R.string.biometric_failure), Toast.LENGTH_SHORT).show();
-    }
+    public void onAuthenticationFailed() {    }
 
     @Override
     public void onAuthenticationCancelled() {
         Toast.makeText(getApplicationContext(), getString(R.string.biometric_cancelled), Toast.LENGTH_SHORT).show();
         finish();
     }
+    @Override
+    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {    }
 
     @Override
-    public void onAuthenticationSuccessful() {
-        Toast.makeText(getApplicationContext(), getString(R.string.biometric_success), Toast.LENGTH_SHORT).show();
-        getLocation();
-        double minDouble= 0.0000000001;
-        if (latitude < minDouble|| longitude <minDouble ){
-            Toast.makeText(MainActivity.this, R.string.bad_location, Toast.LENGTH_SHORT).show();
-        }else if(!isOnline()){
-            Toast.makeText(this, R.string.no_internet, Toast.LENGTH_SHORT).show();
-        }else{
-            Intent intent = new Intent(MainActivity.this, Listed.class);
-            intent.putExtra("latitude",""+latitude);
-            intent.putExtra("longtitude",""+longitude);
-            startActivity(intent);
-        }    }
+    public void onAuthenticationError(int errorCode, CharSequence errString) {    }
 
-    @Override
-    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {
-//        Toast.makeText(getApplicationContext(), helpString, Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
-    public void onAuthenticationError(int errorCode, CharSequence errString) {
-//        Toast.makeText(getApplicationContext(), errString, Toast.LENGTH_SHORT).show();
-    }
-
-    protected boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 
 

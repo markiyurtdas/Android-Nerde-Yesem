@@ -4,7 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Restaurant_  implements Serializable {
 
@@ -117,6 +120,15 @@ public class Restaurant_  implements Serializable {
     public double distance;
 
 
+    public String[] detailList(){
+        String[] list={"Id: " + id,"Address: "+location.address,"Cuisines: " + cuisines,
+                "Average Cost For Two: " + averageCostForTwo,"Currency: " + currency,
+                "Aggregate Rating: " + userRating.aggregateRating +
+                "  ("+userRating.ratingText+")"+" \nVotes: "+userRating.votes,
+                "\nPhotos Url: " + photosUrl, "\nMenu Url: " + menuUrl, "\nEvents Url: " + eventsUrl}  ;
+        return  list;
+
+    }
     @Override
     public String toString() {
         return

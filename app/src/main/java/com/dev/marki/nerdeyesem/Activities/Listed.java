@@ -42,7 +42,7 @@ public class Listed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle_screen);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // add back button to toolbar
@@ -104,6 +104,7 @@ public class Listed extends AppCompatActivity {
     @Override
     protected void onStop() {
         compositeDisposable.clear();
+
         super.onStop();
     }
     private void runLayoutAnimation(final RecyclerView recyclerView) {
@@ -134,12 +135,10 @@ public class Listed extends AppCompatActivity {
                 + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
                 * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        double distance = R * c * 1000; // convert to meters
+        double distance = R * c * 1000;
 
         double height = 0;
-
         distance = Math.pow(distance, 2) + Math.pow(height, 2);
-
         return Math.sqrt(distance);
     }
 
