@@ -25,6 +25,8 @@ import com.dev.marki.nerdeyesem.Utils.ApiInterface;
 import com.dev.marki.nerdeyesem.Utils.RecycleAdapter;
 import com.dev.marki.nerdeyesem.Zomato.Restaurant_;
 import com.dev.marki.nerdeyesem.Zomato.Zomato;
+
+import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +54,7 @@ public class Listed extends AppCompatActivity {
         }
 
 
+        //call retrofit
         Retrofit retrofit = APIClient.getClient();
         apiFace = retrofit.create(ApiInterface.class);
 
@@ -60,16 +63,21 @@ public class Listed extends AppCompatActivity {
         //runLayoutAnimation(recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        getData();
+        getData();//Get restaurant info
     }
 
-    private void getData() {
-        //Def Location is Bornova's location
-        final Intent intent = this.getIntent();
-        double lat = 38.463795415621256;double lon = 28.42412240566057;
 
-        lat  = Double.parseDouble(intent.getStringExtra("latitude"));
-        lon = Double.parseDouble(intent.getStringExtra("longtitude"));
+    private void getData() {
+        final Intent intent = this.getIntent();
+        double lat ,lon;
+
+        //Def Location is Bornova's location
+        try{
+            lat  = Double.parseDouble(intent.getStringExtra("latitude"));
+            lon = Double.parseDouble(intent.getStringExtra("longtitude"));
+        }catch (Exception e){
+                    lat = 38.463795415621256; lon = 28.42412240566057;
+        }
 
         compositeDisposable.add(apiFace.getRestaurantsBySearch(lat,lon,"real_distance",restaurantCount)
                 .subscribeOn(Schedulers.io())
@@ -87,6 +95,8 @@ public class Listed extends AppCompatActivity {
         );
 
     }
+
+    // JSON object fetching  from Zomato
     private void displayData(Zomato zomato,double lat,double lon){
         List<Restaurant_> listItems = new ArrayList<>();
         for (int i = 0; i<zomato.restaurants.size();i++){
@@ -96,6 +106,7 @@ public class Listed extends AppCompatActivity {
             listItems.add(zomato.restaurants.get(i).restaurant);
         }
 
+        //restaurant adding recycle viewer
         RecycleAdapter adapter  = new RecycleAdapter(this,listItems);
         runLayoutAnimation(recyclerView);
         recyclerView.setAdapter(adapter);
@@ -118,12 +129,12 @@ public class Listed extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            Toast.makeText(this, "Geri tuşu basıldı", Toast.LENGTH_SHORT).show();
-        }
+        finish();
         return super.onOptionsItemSelected(menuItem);
     }
 
+
+    //calculate the real distance
     public  double distance(double lat1, double lat2, double lon1,
                             double lon2) {
 

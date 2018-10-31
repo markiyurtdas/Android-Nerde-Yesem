@@ -3,6 +3,7 @@ package com.dev.marki.nerdeyesem.Activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.hardware.fingerprint.FingerprintManager;
 import android.location.Location;
 import android.net.ConnectivityManager;
@@ -21,10 +22,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 public class MainActivity extends AppCompatActivity implements BiometricCallback {
 
+    private boolean pressedBefore = false;
     double latitude =-1;
     double longitude = -1;
     @Override
@@ -40,78 +43,91 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
 
         //startActivity(new Intent(MainActivity.this, Listed.class));
 
-        final TextView btn_login = findViewById(R.id.main_btn_login);
-        btn_login.setVisibility(View.INVISIBLE);
-
+        //For entering program Floating Action Button
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getLocation();
-                btn_login.setVisibility(View.VISIBLE);
-                Toast.makeText(MainActivity.this, latitude +"\n"+longitude, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (!fingerprintManager.isHardwareDetected()) {
-                    // Device doesn't support fingerprint authentication
-                    Toast.makeText(MainActivity.this, "Device doesn't support fingerprint authentication ", Toast.LENGTH_SHORT).show();
+                //if  get location then resume
+                if (getLocation()){
+                    //if device has internet connection then resume
                     if(!isOnline()){
                         Toast.makeText(MainActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
                     }else{
-                        Intent intent = new Intent(MainActivity.this, Listed.class);
-                        intent.putExtra("latitude",""+latitude);
-                        intent.putExtra("longtitude",""+longitude);
-                        startActivity(intent);
+                        //if device doesn't support finger print make Toast message and resume
+                        if (!fingerprintManager.isHardwareDetected()) {
+                            // Device doesn't support fingerprint authentication
+                            Toast.makeText(MainActivity.this, "Device doesn't support fingerprint authentication ", Toast.LENGTH_SHORT).show();
+                            seconActivity();
+
+                            // Device  support finger print but there is no fingerprint
+                        } else if (!fingerprintManager.hasEnrolledFingerprints()) {
+                            Toast.makeText(MainActivity.this, "Please enroll a Fingerprint ", Toast.LENGTH_SHORT).show();
+                        } else {//Everything OK then resume
+                            if (pressedBefore)
+                                seconActivity();
+                            else
+                                getFingerPrintManager();
+                        }
                     }
-                } else if (!fingerprintManager.hasEnrolledFingerprints()) {
-                    Toast.makeText(MainActivity.this, "Please enroll a Fingerprint ", Toast.LENGTH_SHORT).show();
-                } else {
-                    new BiometricManager.BiometricBuilder(MainActivity.this)
-                            .setTitle(getString(R.string.biometric_title))
-                            .setSubtitle(getString(R.string.biometric_subtitle))
-                            .setDescription(getString(R.string.biometric_description))
-                            .setNegativeButtonText(getString(R.string.biometric_negative_button_text))
-                            .build()
-                            .authenticate(MainActivity.this);                }
-
-
+                }else {
+                    Toast.makeText(MainActivity.this, R.string.bad_location, Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
     }
 
-    private void getLocation(){
-        GpsLocation gt = new GpsLocation(getApplicationContext());
-        Location location= gt.getLocation();
-        if( location == null){
-            Toast.makeText(getApplicationContext(),"GPS unable to get Value",Toast.LENGTH_SHORT).show();
-        }else {
-            latitude = location.getLatitude();
-            longitude = location.getLongitude();
-        }
+
+
+    //Calling fingerprint manager for biometric(Fingerprint ) authentication
+    private void getFingerPrintManager(){
+        new BiometricManager.BiometricBuilder(MainActivity.this)
+                .setTitle(getString(R.string.biometric_title))
+                .setSubtitle(getString(R.string.biometric_subtitle))
+                .setDescription(getString(R.string.biometric_description))
+                .setNegativeButtonText(getString(R.string.biometric_negative_button_text))
+                .build()
+                .authenticate(MainActivity.this);
     }
 
-    @Override
-    public void onAuthenticationSuccessful() {
-        Toast.makeText(getApplicationContext(), getString(R.string.biometric_success), Toast.LENGTH_SHORT).show();
-        getLocation();
-        double minDouble= 0.0000000001;
-        if (latitude < minDouble|| longitude <minDouble ){
-            Toast.makeText(MainActivity.this, R.string.bad_location, Toast.LENGTH_SHORT).show();
-        }else if(!isOnline()){
-            Toast.makeText(this, R.string.no_internet, Toast.LENGTH_SHORT).show();
-        }else{
+    //if there is no reason for stop program then pass to another activity page
+    private void seconActivity(){
             Intent intent = new Intent(MainActivity.this, Listed.class);
             intent.putExtra("latitude",""+latitude);
             intent.putExtra("longtitude",""+longitude);
             startActivity(intent);
-        }    }
 
+    }
+
+    //getting location. (latitude longitude)
+    private boolean getLocation(){
+        GpsLocation gt = new GpsLocation(getApplicationContext());
+        Location location= gt.getLocation();
+        boolean check = false;
+        if( location == null){
+
+            Toast.makeText(getApplicationContext(),"GPS unable to get Value",Toast.LENGTH_SHORT).show();
+        }else {
+            check = true;
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+        }
+        return check;
+    }
+
+
+    //if finger print authentication is succed this blog is running
+    @Override
+    public void onAuthenticationSuccessful() {
+        pressedBefore = true;
+        Toast.makeText(getApplicationContext(), getString(R.string.biometric_success), Toast.LENGTH_SHORT).show();
+        getLocation();
+        double minDouble= 0.0000000001;
+        seconActivity();
+    }
+
+    //Check for internet connection
     protected boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -121,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
             return false;
         }
     }
+
 
     @Override
     public void onSdkVersionNotSupported() {
@@ -149,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
     @Override
     public void onAuthenticationFailed() {    }
 
+
+    //if user press the cancel button then close app
     @Override
     public void onAuthenticationCancelled() {
         Toast.makeText(getApplicationContext(), getString(R.string.biometric_cancelled), Toast.LENGTH_SHORT).show();

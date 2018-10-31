@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -23,7 +25,6 @@ import java.util.List;
 
 public class Detail extends AppCompatActivity {
     LinearLayout linearLayout;
-    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,72 +34,76 @@ public class Detail extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-
-
         Restaurant_ restaurant_ ;
         restaurant_ =(Restaurant_) bundle.getSerializable("item");
-        TextView detailRestName = findViewById(R.id.detail_rest_name);
-        TextView distance = findViewById(R.id.distance);
-        imageView = findViewById(R.id.detail_image);
+
+        getTextViewsInfo(restaurant_);
+
+    }
+
+    private void getTextViewsInfo(final Restaurant_ restaurant) {
+
+        TextView tvRestName= findViewById(R.id.detail_rest_name);
+        TextView tvDistance = findViewById(R.id.distance);
+        TextView tvID = findViewById(R.id.detail_id);
+        TextView tvAddress = findViewById(R.id.detail_address);
+        TextView tvCuisines = findViewById(R.id.detail_cuisines);
+        TextView tvAvarageCost = findViewById(R.id.detail_avarage_cost);
+        TextView tvAggRating = findViewById(R.id.detail_agg_rating);
+        TextView tvAggText = findViewById(R.id.detail_text);
+        TextView tvVotes = findViewById(R.id.detail_votes);
+        TextView tvPhotos = findViewById(R.id.detail_photos);
+        TextView tvMenu = findViewById(R.id.detail_menu);
+        TextView tvEvents = findViewById(R.id.detail_events);
+        TextView tvOnlineDelivery = findViewById(R.id.has_online);
+
+        ImageView imageView = findViewById(R.id.detail_image);
 
         try{
-            Picasso.get().load(restaurant_.thumb).into(imageView);
+            Picasso.get().load(restaurant.thumb).into(imageView);
         }catch (Exception e){
             e.printStackTrace();
         }
 
-
-        String[] items = {"id","address","cuisines","average_cost_for_two","currency","user_rating"
-                            ,"photos_url","menu_url","events_url"};
-        String[] listDetail = restaurant_.detailList();
-
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        params.setMargins(0,5,0,5);
-
-        for(int i = 0 ; i<listDetail.length;i++){
-            TextView tv = (TextView)getLayoutInflater().inflate(R.layout.tvtemplate, null);
-            tv.setLayoutParams(params);
-
-            int dist = (int)restaurant_.distance;
-            distance.setText("(~ "+dist+" m)");
-            tv.setText(listDetail[i]);
-            linearLayout.addView(tv);
+        int dist =(int )restaurant.distance;
+        tvDistance.setText("("+dist+" m)");
+        tvID.setText(getString(R.string.restaurant_id)+" " + restaurant.r.resId);
+        tvRestName.setText(restaurant.name);
+        tvAddress.setText(getString(R.string.detail_address) + restaurant.location.address);
+        tvCuisines.setText(getString(R.string.cuisines )+ restaurant.cuisines);
+        tvAvarageCost.setText(getString(R.string.avarage_cost)+ restaurant.averageCostForTwo + " "+restaurant.currency);
+        if (restaurant.hasOnlineDelivery>0){
+            tvOnlineDelivery.setText(getString(R.string.has_online) +" "+ getString(R.string.yes));
+        }else {
+            tvOnlineDelivery.setText(getString(R.string.has_online) +" "+ getString(R.string.no));
         }
+        tvAggRating.setText(getString(R.string.aggregate_rating )+ restaurant.userRating.aggregateRating);
+        tvAggText.setText(restaurant.userRating.ratingText);
+        tvVotes.setText(getString(R.string.votes)+ restaurant.userRating.votes);
 
-//        int dist = (int)restaurant_.distance;
-//        distance.setText("(~ "+dist+" m)");
-//        detailRestName.setText(restaurant_.name);
-//        String str = restaurant_.toString();
-//        TextView tv = new TextView(this);
-//
-//        tv.setTextSize(16);
-//        tv.setText(str);
-//        linearLayout.addView(tv);
+        tvPhotos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(restaurant.photosUrl));
+                startActivity(i);            }
+        });
+        tvMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(restaurant.menuUrl));
+                startActivity(i);            }
+        });
+        tvEvents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(restaurant.eventsUrl));
+                startActivity(i);            }
+        });
+
 
 
     }
-
-
-
-    private void userRatin(){
-        /*"user_rating": {
-          "aggregate_rating": "3.7",
-          "rating_text": "Good",
-          "rating_color": "9ACD32",
-          "votes": "11"
-        },*/
-    }
-
-
-/*
-<item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:padding">4dp</item>
-        <item name="android:gravity">left</item>
-        <item name="android:text">Hello World this is an example</item>
-        <item name="android:textColor">#000000</item>
-        <item name="android:background">#8888</item>
-        <item name="android:textSize">18sp</item>
-*/
 }

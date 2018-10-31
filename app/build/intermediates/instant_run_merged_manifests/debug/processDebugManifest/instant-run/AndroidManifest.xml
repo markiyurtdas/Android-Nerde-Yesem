@@ -22,13 +22,16 @@
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_ny"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_ny"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.dev.marki.nerdeyesem.Activities.MainActivity" >
+        <activity
+            android:name="com.dev.marki.nerdeyesem.Activities.MainActivity"
+            android:screenOrientation="portrait" >
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,9 +40,11 @@
         </activity>
         <activity
             android:name="com.dev.marki.nerdeyesem.Activities.Listed"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.dev.marki.nerdeyesem.Activities.Detail"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <provider
